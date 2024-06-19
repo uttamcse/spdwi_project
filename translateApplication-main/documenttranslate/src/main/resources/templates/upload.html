@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Upload Document</title>
+</head>
+<body>
+<form th:action="@{/documents/upload}" method="post" >
+    <div>
+        <label>File:</label>
+        <input type="file" name="file" />
+    </div>
+    <div>
+        <label>Translate to:</label>
+        <select name="language">
+            <option value="hi-IN">Hindi</option>
+            <option value="bn">Bengali (Bangla)</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">Upload</button>
+    </div>
+</form>
+</body>
+</html>

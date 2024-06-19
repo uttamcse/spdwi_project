@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Document List</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>File Name</th>
+        <th>Upload Date</th>
+        <th>Download</th>
+    </tr>
+    <tr th:each="document : ${documents}">
+        <td th:text="${document.id}"></td>
+        <td th:text="${document.fileName}"></td>
+        <td th:text="${document.uploadDate}"></td>
+        <td><a th:href="@{/documents/download/{id}(id=${document.id})}">Download</a></td>
+    </tr>
+</table>
+<a th:href="@{/documents/upload}">Upload New Document</a>
+</body>
+
+</html>
+
